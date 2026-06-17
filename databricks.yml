@@ -7,7 +7,7 @@ targets:
 
     workspace:
       host: https://dbc-8bd766c2-3a5a.cloud.databricks.com
-      root_path: /Workspace/Shared/notebook-migration-bundle
+      root_path: /Workspace/Users/sravani.geddada@inspirext.com/notebook-migration-bundle
 
 sync:
   include:
