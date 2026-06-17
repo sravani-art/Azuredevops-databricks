@@ -17,8 +17,9 @@ steps:
 
 - script: |
     databricks workspace import \
-      sample_notebook.py \
       /Workspace/Users/sravani.geddada@inspirext.com/sample_notebook.py \
+      --file sample_notebook.py \
+      --format AUTO \
       --overwrite
   displayName: Upload Notebook
   env:
