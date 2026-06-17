@@ -1,0 +1,13 @@
+bundle:
+  name: notebook-migration-bundle
+
+targets:
+  dev:
+    default: true
+
+    workspace:
+      host: https://dbc-8bd766c2-3a5a.cloud.databricks.com
+
+sync:
+  include:
+    - sample_notebook.py
