@@ -1,0 +1,9 @@
+- script: |
+    databricks workspace import \
+      sample_notebook.py \
+      /Workspace/Users/sravani.geddada@inspirext.com/sample_notebook.py \
+      --overwrite
+  displayName: Upload Notebook
+  env:
+    DATABRICKS_HOST: $(DATABRICKS_HOST)
+    DATABRICKS_TOKEN: $(DATABRICKS_TOKEN)
