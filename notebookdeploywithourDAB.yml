@@ -1,3 +1,20 @@
+trigger:
+- main
+
+variables:
+- group: databricks-dev
+
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+
+- script: |
+    curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+  displayName: Install Databricks CLI
+
+
 - script: |
     databricks workspace import \
       sample_notebook.py \
