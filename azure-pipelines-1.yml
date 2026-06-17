@@ -1,0 +1,31 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.11'
+
+- script: |
+    curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+  displayName: Install Databricks CLI
+
+- script: |
+    databricks bundle validate
+  displayName: Validate Bundle
+  env:
+    DATABRICKS_HOST: $(DATABRICKS_HOST)
+    DATABRICKS_CLIENT_ID: $(DATABRICKS_CLIENT_ID)
+    DATABRICKS_CLIENT_SECRET: $(DATABRICKS_CLIENT_SECRET)
+
+- script: |
+    databricks bundle deploy -t dev
+  displayName: Deploy Bundle
+  env:
+    DATABRICKS_HOST: $(DATABRICKS_HOST)
+    DATABRICKS_CLIENT_ID: $(DATABRICKS_CLIENT_ID)
+    DATABRICKS_CLIENT_SECRET: $(DATABRICKS_CLIENT_SECRET)
