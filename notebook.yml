@@ -10,7 +10,7 @@ artifacts:
 targets:
   dev:
     workspace:
-      host: https://dbc-8bd766c2-3a5a.cloud.databricks.com/browse/folders/workspace/ # Replace with your Dev workspace URL
+      host: https://dbc-8bd766c2-3a5a.cloud.databricks.com # Replace with your Dev workspace URL
       root_path: /Shared/.bundle/${bundle.name}/dev
 
 
@@ -21,6 +21,9 @@ resources:
       name: "[${bundle.target}] Sample Notebook Job"
       tasks:
         - task_key: run_notebook
-          existing_cluster_id: c76a6fbe614c2943 # Replace with a valid cluster ID
+           new_cluster:
+             spark_version: 15.4.x-scala2.12
+             node_type_id: Standard_DS3_v2
+             num_workers: 1
           notebook_task:
-            notebook_path: ./src/sample_notebook.py
+            notebook_path: ../src/sample_notebook.py
