@@ -24,8 +24,3 @@ resources:
           existing_cluster_id: c76a6fbe614c2943 # Replace with a valid cluster ID
           notebook_task:
             notebook_path: ../src/sample_notebook.py
-Select:
-
-✅ Starter pipeline
-
-Do not select "Existing Azure Pipelines YAML file" yet unless you've already committed an azure-pipelines.yml file to GitHub.
