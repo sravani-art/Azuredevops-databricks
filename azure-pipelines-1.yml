@@ -1,6 +1,10 @@
 trigger:
 - main
 
+variables:
+- group: databricks-dev
+
+
 pool:
   vmImage: ubuntu-latest
 
