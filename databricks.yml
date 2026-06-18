@@ -6,8 +6,8 @@ targets:
     default: true
 
     workspace:
-      host: https://dbc-8bd766c2-3a5a.cloud.databricks.com
-      root_path: /Workspace/Users/sravani.geddada@inspirext.com/notebook-migration-bundle
+      host: https://adb-4304158276012576.16.azuredatabricks.net
+      root_path: /Workspace/Users/sravani.janaki@inspirext.com/notebook-migration-bundle
 
 sync:
   include:
